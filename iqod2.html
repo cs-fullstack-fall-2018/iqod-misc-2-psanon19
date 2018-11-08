@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+        var str = prompt("Enter Something").toLowerCase();
+        var array_elements = str.split('');
+
+
+        array_elements.sort();
+
+        var current = null;
+        var cnt = 0;
+        for (var i = 0; i < array_elements.length; i++)
+        {
+            if (array_elements[i] == " ")
+            {
+                console.log("Its a space")
+            }
+            else if (array_elements[i] != current)
+            {
+                if (cnt > 0)
+                {
+                    document.write(current + ' comes --> ' + Math.ceil(((cnt/array_elements.length)*100)) + '% times<br>');
+                }
+                current = array_elements[i];
+                cnt = 1;
+            }
+
+            else
+                {
+                    cnt++;
+                }
+        }
+
+        if (cnt > 0)
+        {
+            document.write(current + ' comes --> ' + Math.ceil(((cnt/array_elements.length)*100)) + '% times');
+
+
+    }
+count()
+</script>
+
+</body>
+</html>
